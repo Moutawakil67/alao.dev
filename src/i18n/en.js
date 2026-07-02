@@ -14,7 +14,6 @@ export default {
     body: "Frontend developer for 5 years, specialized in Vue.js, I've supported public institutions and private companies in Benin in building business applications: government project management, insurance platforms, monitoring and evaluation tools. Graduate of a Bachelor's in Software Architecture (ESGIS Benin), I master the full frontend development cycle, from mockup to production, following Agile methodologies.",
     education: 'Education',
     edu1: "Bachelor's in Software Architecture — ESGIS Benin (2024–2025)",
-    edu2: 'Industrial Computing and Maintenance — Institut CERCO (2016–2018)',
     languages: 'Languages',
     langNote: 'French C2 · Nago B2 · English B2'
   },
