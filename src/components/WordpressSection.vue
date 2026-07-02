@@ -18,7 +18,7 @@ const { t } = useI18n()
         target="_blank"
         rel="noopener noreferrer"
         class="card card--interactive wp__card"
-        :class="{ 'wp__card--wide': i === 0 || i === 4 }"
+        :class="{ 'wp__card--wide':  i === 4 }"
       >
         <div class="wp__card-header">
           <span class="line-ref">{{ String(i + 1).padStart(2, '0') }}</span>
