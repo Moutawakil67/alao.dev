@@ -1,0 +1,234 @@
+/* ============================================
+   Design tokens
+   Palette: ancrée dans le métier — encre nocturne
+   (interfaces d'administration publique) + lagune
+   (teal, Bénin) + ambre discret (accent rare).
+   Typo: Space Grotesk (display, geométrique, technique)
+         IBM Plex Sans (corps, lisible, registre "systèmes")
+         IBM Plex Mono (labels/repères — lecture "fichier source")
+   ============================================ */
+
+:root {
+  --ink-950: #0c1424;
+  --ink-900: #14213d;
+  --ink-800: #1d2f52;
+  --paper-0: #f3f5f3;
+  --paper-1: #e8ebe7;
+  --lagoon-300: #5dcaa5;
+  --lagoon-500: #0f6e56;
+  --lagoon-700: #085041;
+  --amber-400: #ef9f27;
+  --amber-600: #854f0b;
+  --line-soft: rgba(20, 33, 61, 0.12);
+  --line-strong: rgba(20, 33, 61, 0.28);
+
+  --bg: var(--paper-0);
+  --bg-raised: #ffffff;
+  --text-primary: var(--ink-900);
+  --text-secondary: #4b5566;
+  --text-muted: #7b8494;
+  --accent: var(--lagoon-500);
+  --accent-text: var(--lagoon-700);
+  --border: var(--line-soft);
+  --border-strong: var(--line-strong);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --gutter: 64px;
+  --radius: 4px;
+  --radius-card: 14px;
+
+  /* Ombres douces multi-couches — jamais une ombre dure unique */
+  --shadow-sm: 0 1px 2px rgba(12, 20, 36, 0.04), 0 2px 6px rgba(12, 20, 36, 0.04);
+  --shadow-md: 0 2px 4px rgba(12, 20, 36, 0.05), 0 10px 24px rgba(12, 20, 36, 0.07);
+  --shadow-lift: 0 4px 10px rgba(12, 20, 36, 0.06), 0 18px 34px rgba(12, 20, 36, 0.1);
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  --bg: var(--ink-950);
+  --bg-raised: var(--ink-900);
+  --text-primary: #eef1f6;
+  --text-secondary: #aab3c4;
+  --text-muted: #6f7a8d;
+  --accent: var(--lagoon-300);
+  --accent-text: var(--lagoon-300);
+  --border: rgba(238, 241, 246, 0.08);
+  --border-strong: rgba(238, 241, 246, 0.18);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24), 0 2px 6px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.28), 0 12px 28px rgba(0, 0, 0, 0.32);
+  --shadow-lift: 0 4px 10px rgba(0, 0, 0, 0.32), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+p { line-height: 1.5; }
+
+a { color: inherit; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Repère "ligne de fichier" — dispositif structurel filé sur
+   toutes les sections, comme des numéros de ligne de code. */
+.line-ref {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--border-strong);
+  user-select: none;
+}
+
+.section {
+  position: relative;
+  padding: 96px var(--gutter);
+  max-width: 1180px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+
+.section__marker {
+  position: absolute;
+  left: 20px;
+  top: 96px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--border-strong);
+}
+
+@media (max-width: 860px) {
+  :root { --gutter: 24px; }
+  .section { padding: 64px var(--gutter); }
+  .section__marker { display: none; }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease),
+    color 0.2s var(--ease), transform 0.15s var(--ease), box-shadow 0.2s var(--ease);
+}
+.btn:hover { border-color: var(--accent); color: var(--accent-text); box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(0.98); box-shadow: none; }
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+.btn--solid {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ink-950);
+  box-shadow: var(--shadow-sm);
+}
+.btn--solid:hover { opacity: 0.92; color: var(--ink-950); box-shadow: var(--shadow-md); }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 4px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  background: var(--bg-raised);
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.15s var(--ease);
+}
+.tag:hover { border-color: var(--accent); color: var(--accent-text); transform: translateY(-1px); }
+
+/* Carte de base — ombre douce multi-couche, jamais de bordure dure seule */
+.card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.card--interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--border-strong);
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding: 6px 12px 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-raised);
+  box-shadow: var(--shadow-sm);
+}
+.status-chip__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lagoon-300);
+  box-shadow: 0 0 0 0 rgba(93, 202, 165, 0.5);
+  animation: pulse 2.2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(93, 202, 165, 0.45); }
+  70% { box-shadow: 0 0 0 6px rgba(93, 202, 165, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(93, 202, 165, 0); }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
