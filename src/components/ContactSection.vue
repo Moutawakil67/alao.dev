@@ -22,14 +22,14 @@ const links = {
         <span class="line-ref">{{ t.contact.email }}</span>
         <span>alaomoutawakil@gmail.com</span>
       </a>
-      <a :href="links.linkedin" class="card card--interactive contact__item" target="_blank" rel="noopener">
+      <!-- <a :href="links.linkedin" class="card card--interactive contact__item" target="_blank" rel="noopener">
         <span class="line-ref">{{ t.contact.linkedin }}</span>
         <span>https://www.linkedin.com/in/alao-bouraima/</span>
       </a>
       <a :href="links.github" class="card card--interactive contact__item" target="_blank" rel="noopener">
         <span class="line-ref">{{ t.contact.github }}</span>
         <span>https://github.com/Moutawakil67</span>
-      </a>
+      </a> -->
       <a :href="links.phone" class="card card--interactive contact__item">
         <span class="line-ref">{{ t.contact.phone }}</span>
         <span>+229 0167 217 812</span>
