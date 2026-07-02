@@ -14,7 +14,6 @@ export default {
     body: "Développeur Frontend depuis 5 ans, spécialisé en Vue.js, j'ai accompagné des institutions publiques et des entreprises privées béninoises dans la conception d'applications métier : gestion de projets gouvernementaux, plateformes d'assurance, outils de suivi-évaluation. Diplômé d'une Licence en Architecture Logicielle (ESGIS Bénin), je maîtrise l'ensemble du cycle de développement frontend, de la maquette à la mise en production, selon les méthodologies Agile.",
     education: "Formation",
     edu1: "Licence en Architecture Logicielle — ESGIS Bénin (2024–2025)",
-    edu2: "Informatique Industrielle et Maintenance — Institut CERCO (2016–2018)",
     languages: "Langues",
     langNote: "Français C2 · Nago B2 · Anglais B2",
   },
