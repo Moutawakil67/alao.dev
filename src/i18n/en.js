@@ -81,7 +81,7 @@ export default {
     items: [
       { name: 'SECUPRO', type: 'Showcase site', note: 'Theme customization, SEO optimization.', url: 'https://secuprogroup.com/' },
       { name: 'MINNAGAN (UAC)', type: 'Institutional site', note: 'Theme customization.', url: 'https://minnagan.com/' },
-      { name: 'MARKETB AFRICA', type: 'Showcase site — insurance', note: 'Theme customization, SEO optimization.', url: 'https://maketb.africa/' },
+      { name: 'MARKETB AFRICA', type: 'Showcase site — insurance', note: 'Theme customization, SEO optimization.', url: 'https://marketb.africa/' },
       { name: 'Making Digi Prod', type: 'Showcase site', note: 'Theme customization.', url: 'https://makingdigiprod.com/' },
       { name: 'Factorial-T', type: 'Showcase site', note: 'Theme customization, SEO optimization.', url: 'https://factorial-t.com/' }
     ]
